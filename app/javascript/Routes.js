@@ -8,7 +8,12 @@ import PostsList from './bundles/posts/index';
 export default () => {
   return (
     <Switch>
-      <Route exact path="/api/posts" component={PostsList}/>
+      <Route exact path="/">
+        <h3>Root Path Component</h3>
+      </Route>
+      <Route path="/api/posts">
+        <PostsList/>
+      </Route>
     </Switch>
   );
 }
