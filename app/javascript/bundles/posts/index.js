@@ -43,12 +43,20 @@ export default class PostsList extends React.Component{
                   </td>
                   <td>
                     <button type="button" onClick={()=>this.deletePost(post.id)}>Delete</button>
+                    <Link to={`/posts/${post.id}/edit`}>
+                    Edit
+                    </Link>
                   </td>
                 </tr>
               )
             })
           }
-          <div><Link to="/posts/new">Create new post</Link></div>
+          <tr>
+            <td>
+              <Link to="/posts/new">Create new post</Link>
+            </td>
+          </tr>
+
         </tbody>
       </table>
     )
