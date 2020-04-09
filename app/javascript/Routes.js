@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import PostsList from './bundles/posts/index';
+import PostDetails from './bundles/posts/postDetails';
 
 export default () => {
   return (
@@ -11,8 +12,8 @@ export default () => {
       <Route exact path="/">
         <PostsList/>
       </Route>
-      <Route path="/api/posts">
-        <PostsList/>
+      <Route path="/api/posts/:id">
+        <PostDetails/>
       </Route>
     </Switch>
   );

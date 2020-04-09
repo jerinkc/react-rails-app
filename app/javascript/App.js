@@ -10,14 +10,6 @@ export default class App extends React.Component {
     console.log('app being mounted');
     return (
       <Router>
-        <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-        <hr />
-        </div>
         <Routes />
       </Router>
     );
