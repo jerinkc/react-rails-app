@@ -48,6 +48,7 @@ export default class PostsList extends React.Component{
               )
             })
           }
+          <div><Link to="/posts/new">Create new post</Link></div>
         </tbody>
       </table>
     )
@@ -58,7 +59,7 @@ export default class PostsList extends React.Component{
   }
 
   deletePost(id){
-    axios.delete(`/api/posts/${id}`).then(this.fetchPosts())
+    axios.delete(`/api/posts/${id}`).then(response=>this.fetchPosts())
   }
 
 }
