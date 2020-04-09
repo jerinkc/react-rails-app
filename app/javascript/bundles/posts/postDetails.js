@@ -21,7 +21,7 @@ export default class PostDetails extends React.Component {
         </div>
 
         <div>
-          <label>Is Published: {post.is_published} </label>
+          <label>Is Published: {post.is_published ? 'Yes' : 'No'} </label>
         </div>
       </div>
     );

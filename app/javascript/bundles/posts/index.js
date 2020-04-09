@@ -6,9 +6,7 @@ export default class PostsList extends React.Component{
   state = {posts: []}
 
   componentDidMount(){
-    axios.get('/api/posts').then(response => this.setState({posts: response.data}))
-    // fetch('/api/posts').then(response=> response.json()).
-    //   then(posts => this.setState({posts}))
+    this.fetchPosts()
   }
 
   render(){
@@ -43,6 +41,9 @@ export default class PostsList extends React.Component{
                   <td>
                     {post.is_published ? 'Yes' : 'No'}
                   </td>
+                  <td>
+                    <button type="button" onClick={()=>this.deletePost(post.id)}>Delete</button>
+                  </td>
                 </tr>
               )
             })
@@ -51,4 +52,13 @@ export default class PostsList extends React.Component{
       </table>
     )
   }
+
+  fetchPosts(){
+    axios.get('/api/posts').then(response => this.setState({posts: response.data}))
+  }
+
+  deletePost(id){
+    axios.delete(`/api/posts/${id}`).then(this.fetchPosts())
+  }
+
 }
