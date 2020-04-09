@@ -9,7 +9,6 @@ export default class PostsList extends React.Component{
   }
 
   render(){
-    console.log(posts)
     return(
       <h1>inside index PostsList component</h1>
     )

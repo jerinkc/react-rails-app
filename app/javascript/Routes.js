@@ -9,7 +9,7 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/">
-        <h3>Root Path Component</h3>
+        <PostsList/>
       </Route>
       <Route path="/api/posts">
         <PostsList/>
