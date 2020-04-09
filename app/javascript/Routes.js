@@ -12,9 +12,7 @@ export default () => {
       <Route exact path="/">
         <PostsList/>
       </Route>
-      <Route path="/api/posts/:id">
-        <PostDetails/>
-      </Route>
+      <Route path="/posts/:id" exact component={PostDetails}/>
     </Switch>
   );
 }

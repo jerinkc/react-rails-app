@@ -1,33 +1,27 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class PostDetails extends React.Component {
-  state = {post:''}
+  state = { post:{} }
 
   componentDidMount() {
     const { match: { params: { id } } } = this.props;
-    fetch(`/api/v1/posts/${id}`).
-      then((response) => response.json()).
-      then((post) => this.setState({ post }));
+    axios.get(`/api/posts/${id}`).then(response=> this.setState({post: response.data}))
   }
 
   render() {
-    console.log(props)
     const { post } = this.state;
     return (
       <div>
         <div>
-          <label> Title </label>
-          <p> {post.title} </p>
+          <label> Title: {post.title}</label>
+        </div>
+        <div>
+          <label> Description: {post.description}</label>
         </div>
 
         <div>
-          <label> Description </label>
-          <p> {post.description} </p>
-        </div>
-
-        <div>
-          <label>Is Published</label>
-          <p> {post.is_published} </p>
+          <label>Is Published: {post.is_published} </label>
         </div>
       </div>
     );
