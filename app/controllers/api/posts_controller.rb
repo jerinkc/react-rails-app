@@ -1,4 +1,12 @@
 class Api::PostsController < ApplicationController
+  #other files involved includes
+  #initializers/react_on_rails.rb - point to js/packs,posts-bundle.js
+
+  layout "posts" #points to posts.html.erb in view/layout
+
+  def handle_react
+  end
+
   def index
     all_posts = Post.all
     render json: all_posts
